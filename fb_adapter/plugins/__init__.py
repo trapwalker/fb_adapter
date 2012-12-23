@@ -2,4 +2,9 @@
 from __future__ import absolute_import, with_statement
 from . import *
 
-__version__ = '0.0.1'
+_plugins = []
+
+def register(module):
+	if module not in _plugins:
+		_plugins.append(module)
+	
